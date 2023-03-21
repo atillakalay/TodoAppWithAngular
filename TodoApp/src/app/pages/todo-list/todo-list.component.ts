@@ -35,13 +35,16 @@ export class TodoListComponent {
     })
   }
 
-  isComplated(id: number) {
-    this.todoService.isComplated(id).subscribe(x => {
-      if (x == true) {
-        let index = this.todoList.findIndex(x => x.id == id)
-        this.todoList[index].isComplated = !this.todoList[index].isComplated
+  isCompleted(id: number) {
+    this.todoService.isCompleted(id).subscribe(x => {
+      if (x) {
+        let index = this.todoList.findIndex(x => x.id == id);
+        this.todoList[index].isCompleted = !this.todoList[index].isCompleted;
+      } else {
+        console.log('Failed to mark as completed');
       }
-    })
+    });
   }
+
 
 }

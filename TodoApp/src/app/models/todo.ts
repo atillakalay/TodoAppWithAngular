@@ -1,6 +1,6 @@
 export interface Todo {
   id: number
   content: string
-  isComplated: boolean
+  isCompleted: boolean
   created: Date
 }

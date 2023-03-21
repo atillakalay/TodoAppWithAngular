@@ -35,7 +35,7 @@ export class TodoService {
       (response) => response.status == 204))
   }
 
-  isComplated(id: number) {
+  isCompleted(id: number) {
     return this.http.put<Response>(`${this.baseUrl}/api/todos/iscompleted/${id}`, {}, { observe: 'response' }).pipe(map(
       (response) => response.status == 204))
   }
