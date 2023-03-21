@@ -7,6 +7,7 @@ import { TodoAddComponent } from './pages/todo-add/todo-add.component';
 import { TodoUpdateComponent } from './pages/todo-update/todo-update.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { environment } from 'environment';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { environment } from 'environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [{provide:'BASE_API_URL',useValue:environment.baseUrl}],
   bootstrap: [AppComponent]
