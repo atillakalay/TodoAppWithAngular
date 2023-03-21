@@ -31,12 +31,12 @@ export class TodoService {
   }
 
   update(todo: TodoUpdate) {
-    return this.http.put<Response>(`${this.baseUrl}/api/todos`, todo, { observe: 'response' }).pipe(map(
+    return this.http.put<Response>(`${this.baseUrl}/api/todos/`, todo, { observe: 'response' }).pipe(map(
       (response) => response.status == 204))
   }
 
   isComplated(id: number) {
-    return this.http.put<Response>(`${this.baseUrl}/api/todos/${id}`, {}, { observe: 'response' }).pipe(map(
+    return this.http.put<Response>(`${this.baseUrl}/api/todos/iscompleted/${id}`, {}, { observe: 'response' }).pipe(map(
       (response) => response.status == 204))
   }
 }
