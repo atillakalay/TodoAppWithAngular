@@ -8,7 +8,7 @@ import { TodoUpdate } from '../models/todo-update';
 @Injectable({
   providedIn: 'root'
 })
-export class TodoServiceService {
+export class TodoService {
 
   constructor(private http: HttpClient, @Inject('BASE_API_URL') private baseUrl: string) { }
 
