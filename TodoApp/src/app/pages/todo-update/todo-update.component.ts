@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TodoUpdate } from 'src/app/models/todo-update';
 import { TodoService } from 'src/app/services/TodoService';
 
 @Component({
@@ -28,8 +29,15 @@ export class TodoUpdateComponent {
 
   }
 
-  update(){
-    
+  update() {
+    this.todoService.update(this.todoForm.value as TodoUpdate).subscribe(x => {
+      if (x == true) {
+        this.router.navigateByUrl("/todos")
+      }
+      else{
+        alert("Todo güncellenemedi!")
+      }
+    })
   }
 
 

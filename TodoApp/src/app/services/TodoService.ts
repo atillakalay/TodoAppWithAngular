@@ -31,7 +31,7 @@ export class TodoService {
   }
 
   update(todo: TodoUpdate) {
-    return this.http.put<Response>(`${this.baseUrl}/api/todos/`, todo, { observe: 'response' }).pipe(map(
+    return this.http.put<Response>(`${this.baseUrl}/api/todos/${todo.id}`, todo, { observe: 'response' }).pipe(map(
       (response) => response.status == 204))
   }
 
